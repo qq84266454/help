@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="157dp"
+              android:layout_height="190dp"
+              android:layout_marginLeft="8dp"
+              android:layout_marginRight="2dp"
+              android:background="@drawable/bg_add_focus"
+              android:orientation="vertical">
+
+	<de.hdodenhof.circleimageview.CircleImageView
+		android:id="@+id/mIvImg"
+		android:layout_width="55dp"
+		android:layout_height="55dp"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="20dp"/>
+
+	<TextView
+		android:hint="用户名"
+		android:id="@+id/mTvName"
+		android:gravity="center_horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="2dp"
+		android:textColor="@color/black"
+		android:textSize="@dimen/sp_16"/>
+
+	<TextView
+		android:hint="介绍"
+		android:id="@+id/mTvIntro"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="2dp"
+		android:textColor="@color/color7d"
+		android:textSize="@dimen/sp_12"/>
+
+	<TextView
+		android:id="@+id/mTvAdd"
+		android:layout_width="match_parent"
+		android:layout_height="29dp"
+		android:layout_marginLeft="27dp"
+		android:layout_marginRight="27dp"
+		android:layout_marginTop="27dp"
+		android:background="@drawable/bg_btn_add_focus"
+		android:gravity="center"
+		android:text="+ 好友"
+		android:textColor="@color/white"
+		android:textSize="@dimen/sp_15"/>
+</LinearLayout>

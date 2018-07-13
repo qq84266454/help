@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:textColor="@color/color888"
+              android:orientation="vertical">
+
+	<include layout="@layout/layout_general_title"/>
+
+	<TextView
+		android:paddingLeft="@dimen/dp_18"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="@dimen/dp_8"
+		android:paddingTop="@dimen/dp_16"
+		android:text="您的位置"
+		android:textSize="@dimen/sp_14"/>
+	<TextView
+		android:background="@color/white"
+		android:paddingLeft="@dimen/dp_18"
+		android:id="@+id/mTvAddress"
+		android:textColor="@color/black"
+		android:textSize="@dimen/sp_14"
+		android:layout_width="match_parent"
+		android:layout_height="48dp"/>
+
+	<TextView
+		android:paddingLeft="@dimen/dp_18"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="@dimen/dp_8"
+		android:paddingTop="@dimen/dp_16"
+		android:text="切换城市"
+		android:textSize="@dimen/sp_14"/>
+</LinearLayout>

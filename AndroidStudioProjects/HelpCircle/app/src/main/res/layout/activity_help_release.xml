@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+	<include layout="@layout/layout_general_title"/>
+
+	<android.support.v4.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:scrollbars="none">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:paddingLeft="@dimen/dp_18"
+				android:paddingRight="@dimen/dp_18">
+
+				<EditText
+					android:id="@+id/mEtContent"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@null"
+					android:gravity="top"
+					android:hint="描述一下互助的细节（140字以内）"
+					android:maxLength="140"
+					android:minHeight="240dp"
+					android:paddingTop="@dimen/dp_12"
+					android:textColorHint="@color/colorC2"
+					android:textSize="@dimen/sp_14"/>
+
+				<android.support.v7.widget.RecyclerView
+					android:id="@+id/mRvAddImg"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/mEtContent"/>
+
+				<android.support.v7.widget.RecyclerView
+					android:id="@+id/mRvHelpImg"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/mEtContent"/>
+			</RelativeLayout>
+
+			<LinearLayout
+				android:id="@+id/mLLAdress"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/dp_16"
+				android:layout_marginTop="@dimen/dp_16"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="@dimen/dp_18">
+
+				<ImageView
+					android:layout_width="10dp"
+					android:layout_height="14dp"
+					android:src="@color/black"/>
+
+				<TextView
+					android:id="@+id/mTvAddress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/dp_8"
+					android:text="湖南 长沙 芙蓉区"
+					android:textColor="@color/color222"/>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/bg_general_item"
+				android:orientation="vertical"
+				android:paddingLeft="@dimen/dp_18"
+				android:paddingRight="@dimen/dp_18">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="43dp"
+					android:gravity="center_vertical"
+
+					>
+
+					<TextView
+						style="@style/style_help_release_text_general_item"
+						android:layout_centerVertical="true"
+						android:text="总金额"/>
+
+					<TextView
+						android:id="@+id/mTvRewardRight"
+						style="@style/style_help_release_text_general_item"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:text="贝"/>
+
+					<EditText
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_toLeftOf="@id/mTvRewardRight"
+						android:background="@null"
+						android:hint="0.00"
+						android:textColor="@color/colorB2"/>
+				</RelativeLayout>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:background="@color/colorE5"/>
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="43dp"
+					android:gravity="center_vertical"
+					>
+
+					<TextView
+						style="@style/style_help_release_text_general_item"
+						android:layout_centerVertical="true"
+						android:text="奖励人数"/>
+
+					<TextView
+						android:id="@+id/mTvCountRight"
+						style="@style/style_help_release_text_general_item"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true"
+						android:text="人"/>
+
+					<EditText
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_toLeftOf="@id/mTvCountRight"
+						android:background="@null"
+						android:hint="填写人数"
+						android:inputType="number"
+						android:textColor="@color/colorB2"/>
+				</RelativeLayout>
+			</LinearLayout>
+
+			<TextView
+				android:id="@+id/mTvRelease"
+				android:layout_width="match_parent"
+				android:layout_height="40dp"
+				android:layout_marginBottom="@dimen/dp_30"
+				android:layout_marginLeft="@dimen/dp_18"
+				android:layout_marginRight="@dimen/dp_30"
+				android:layout_marginTop="@dimen/dp_30"
+				android:background="#FF0084FF"
+				android:gravity="center"
+				android:text="确定发布"
+				android:textColor="@color/white"/>
+		</LinearLayout>
+	</android.support.v4.widget.NestedScrollView>
+</LinearLayout>
