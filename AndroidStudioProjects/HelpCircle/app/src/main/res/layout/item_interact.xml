@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:paddingBottom="@dimen/dp_10"
+	android:paddingTop="@dimen/dp_10">
+
+	<de.hdodenhof.circleimageview.CircleImageView
+		android:id="@+id/mIvPosterImg"
+		android:layout_width="@dimen/dp_40"
+		android:layout_height="@dimen/dp_40"
+		android:layout_marginRight="5dp"/>
+
+	<TextView
+		android:id="@+id/mTvPosterName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/mIvPosterImg"
+		android:hint="用户名"
+		android:textColor="@color/black"
+		android:textSize="@dimen/sp_14"/>
+
+	<TextView
+		android:id="@+id/mTvPosterIntro"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/mTvPosterName"
+		android:layout_toRightOf="@id/mIvPosterImg"
+		android:hint="个性签名"
+		android:textColor="@color/colorBA"
+		android:textSize="@dimen/sp11"/>
+
+	<TextView
+		android:id="@+id/mTvAddFriend"
+		android:layout_width="75dp"
+		android:layout_height="30dp"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="@dimen/dp_16"
+		android:background="@drawable/bg_interact_add_friend"
+		android:gravity="center"
+		android:text="+ 好友"
+		android:textColor="@color/color_bg_add_friend"
+		android:textSize="@dimen/sp11"
+		/>
+
+	<View
+		android:layout_alignParentBottom="true"
+		android:layout_width="match_parent"
+		android:layout_height="0.5px"
+		android:background="@color/color_release_success_divider"/>
+</RelativeLayout>
