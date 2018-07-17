@@ -43,9 +43,14 @@ public class InteractActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_interact);
         ButterKnife.bind(this);
         initView();
+    }
+
+    @Override
+    protected void setView() {
+        setContentView(R.layout.activity_interact);
+
     }
 
     @Override

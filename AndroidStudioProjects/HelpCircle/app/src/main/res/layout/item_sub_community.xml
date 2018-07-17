@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginBottom="@dimen/dp_12"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/dp_22"
+              android:paddingLeft="@dimen/dp_16"
+              android:paddingRight="@dimen/dp_16"
+              android:paddingTop="@dimen/dp_22">
+
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/mPicRv"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/dp_8"
+		android:layout_marginTop="@dimen/dp_16"
+		android:text="X个互助消息"
+		android:textColor="@color/black"
+		android:textSize="@dimen/sp_14"/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:id="@+id/mTvActiveUser"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+		<TextView
+			android:id="@+id/mTvPopValue"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/bg_ll_community"
+			android:orientation="horizontal"
+			android:paddingBottom="@dimen/dp_8"
+			android:paddingLeft="@dimen/dp_8"
+			android:paddingRight="@dimen/dp_12"
+			android:paddingTop="@dimen/dp_8">
+
+			<ImageView
+				android:id="@+id/mIvLogo"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@mipmap/ic_launcher"/>
+
+			<TextView
+				android:id="@+id/mTvName"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/dp_12"
+				android:layout_marginTop="@dimen/dp_4"
+				android:layout_weight="1"
+				android:text="论坛名"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:background="@drawable/bg_text_enter_community"
+				android:paddingBottom="@dimen/dp_5"
+				android:paddingLeft="@dimen/dp_12"
+				android:paddingRight="@dimen/dp_12"
+				android:paddingTop="@dimen/dp_5"
+				android:text="进社区"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_12"/>
+		</LinearLayout>
+	</RelativeLayout>
+
+</LinearLayout>

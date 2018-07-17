@@ -4,6 +4,8 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/mRv"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	tools:context=".ui.fragment.InteractFragment">
+	android:layout_height="wrap_content"
+	android:background="@color/white"
+	tools:context=".ui.fragment.SubCommunityFragment">
+
 </android.support.v7.widget.RecyclerView>

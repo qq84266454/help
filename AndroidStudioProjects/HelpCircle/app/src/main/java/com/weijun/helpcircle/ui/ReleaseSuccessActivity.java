@@ -1,6 +1,5 @@
 package com.weijun.helpcircle.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.weijun.helpcircle.R;
@@ -11,6 +10,11 @@ public class ReleaseSuccessActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void setView() {
         setContentView(R.layout.activity_release_suceess);
+
     }
 }

@@ -1,8 +1,10 @@
 package com.weijun.helpcircle.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,23 +15,39 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AddressActivity extends BaseActivity {
+public class CommunityCreateActivity extends BaseActivity {
 
+    @BindView(R.id.mIvLeft)
+    ImageView mIvLeft;
     @BindView(R.id.mTvLeft)
     TextView mTvLeft;
     @BindView(R.id.mLLLeft)
     LinearLayout mLLLeft;
+    @BindView(R.id.mIvRight)
+    ImageView mIvRight;
     @BindView(R.id.mTvRight)
     TextView mTvRight;
     @BindView(R.id.mLLRight)
     LinearLayout mLLRight;
     @BindView(R.id.mTvTitle)
     TextView mTvTitle;
+    @BindView(R.id.mTvName)
+    TextView mTvName;
     @BindView(R.id.mTvAddress)
     TextView mTvAddress;
+    @BindView(R.id.mTvNotice)
+    TextView mTvNotice;
+    @BindView(R.id.mTvCost)
+    TextView mTvCost;
+    @BindView(R.id.mTvCostValue)
+    TextView mTvCostValue;
+    @BindView(R.id.mTvCategory)
+    TextView mTvCategory;
+    @BindView(R.id.mTvCreate)
+    TextView mTvCreate;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         initView();
@@ -37,26 +55,24 @@ public class AddressActivity extends BaseActivity {
 
     @Override
     protected void setView() {
-        setContentView(R.layout.activity_address);
+        setContentView(R.layout.activity_community_create);
     }
 
     @Override
     protected void initView() {
-        mTvTitle.setText("所在地");
+        mTvTitle.setText("创建社区");
         mTvRight.setVisibility(View.GONE);
-        mTvLeft.setVisibility(View.GONE);
+
     }
 
-    @OnClick({R.id.mTvLeft, R.id.mLLLeft, R.id.mLLRight, R.id.mTvTitle})
+    @OnClick({R.id.mLLLeft, R.id.mTvCreate})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.mTvLeft:
-                break;
             case R.id.mLLLeft:
+                finish();
                 break;
-            case R.id.mLLRight:
-                break;
-            case R.id.mTvTitle:
+            case R.id.mTvCreate:
+                startActivity(new Intent(this,CommunityInfoActivity.class));
                 break;
         }
     }

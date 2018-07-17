@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		>
+
+		<include layout="@layout/layout_top"/>
+
+		<include layout="@layout/layout_general_title"/>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/dp_44"
+			android:orientation="horizontal"
+			android:paddingLeft="@dimen/dp_16">
+
+			<TextView
+				android:id="@+id/mTvName"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:text="社区名称"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/dp_22"
+				android:layout_toRightOf="@+id/mTvName"
+				android:background="@null"
+				android:hint="起个名字,10个字以内"
+				android:maxLength="10"
+				android:textSize="@dimen/sp_14"/>
+
+			<include layout="@layout/layout_general_divider"/>
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/dp_44"
+			android:orientation="horizontal"
+			android:paddingLeft="@dimen/dp_16">
+
+			<TextView
+				android:id="@+id/mTvAddress"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:text="所属地点"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/dp_22"
+				android:layout_toRightOf="@+id/mTvAddress"
+				android:background="@null"
+				android:hint="青岛市"
+				android:maxLength="10"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="@dimen/dp_16"
+				android:text="修改"
+				android:textColor="@color/color_bg_add_friend"/>
+
+			<include layout="@layout/layout_general_divider"/>
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="100dp"
+			android:orientation="horizontal"
+			android:paddingLeft="@dimen/dp_16"
+			android:paddingTop="@dimen/dp_12">
+
+			<TextView
+				android:id="@+id/mTvNotice"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="社区公告"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/dp_22"
+				android:layout_toRightOf="@+id/mTvNotice"
+				android:background="@null"
+				android:hint="更精彩的介绍能吸引更多助友加入（140字以内）"
+				android:maxLength="10"
+				android:textSize="@dimen/sp_14"/>
+
+			<include layout="@layout/layout_general_divider"/>
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/dp_44"
+			android:orientation="horizontal"
+			android:paddingLeft="@dimen/dp_16">
+
+			<TextView
+				android:id="@+id/mTvCost"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:text="创建金额"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<TextView
+				android:id="@+id/mTvCostValue"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/dp_22"
+				android:layout_toRightOf="@+id/mTvCost"
+				android:background="@null"
+				android:maxLength="10"
+				android:text="100.00"
+				android:textColor="#FFFF7100"
+				android:textSize="@dimen/sp_14"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/dp_5"
+				android:layout_toRightOf="@id/mTvCostValue"
+				android:text="贝"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<include layout="@layout/layout_general_divider"/>
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/dp_44"
+			android:orientation="horizontal"
+			android:paddingLeft="@dimen/dp_16">
+
+			<TextView
+				android:id="@+id/mTvCategory"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:text="社区分类"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="@dimen/dp_22"
+				android:layout_toRightOf="@+id/mTvCategory"
+				android:background="@null"
+				android:hint="选择分类"
+				android:maxLength="10"
+				android:textSize="@dimen/sp_14"/>
+
+			<include layout="@layout/layout_general_divider"/>
+		</RelativeLayout>
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/mTvCreate"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/dp_40"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="20dp"
+		android:layout_marginLeft="@dimen/dp_16"
+		android:layout_marginRight="@dimen/dp_16"
+		android:background="@drawable/btn_selector"
+		android:enabled="true"
+		android:gravity="center"
+		android:text="确认创建"
+		android:textColor="@color/white"
+		android:textSize="@dimen/sp_16"/>
+</RelativeLayout>

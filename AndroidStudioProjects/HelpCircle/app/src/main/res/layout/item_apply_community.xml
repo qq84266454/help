@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:layout_width="match_parent"
+	android:layout_height="64dp"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:background="@color/white"
+		android:orientation="horizontal"
+		android:paddingBottom="@dimen/dp_12"
+		android:paddingLeft="@dimen/dp_16"
+		android:paddingRight="@dimen/dp_16"
+		android:paddingTop="@dimen/dp_12">
+
+		<de.hdodenhof.circleimageview.CircleImageView
+			android:layout_width="37dp"
+			android:layout_height="37dp"
+			android:src="@color/black"/>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_marginLeft="@dimen/dp_16"
+			android:layout_weight="1"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="用户名"
+				android:textColor="@color/black"
+				android:textSize="@dimen/sp_14"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="个性签名"
+				android:textColor="@color/colorBA"
+				android:textSize="@dimen/sp11"/>
+		</LinearLayout>
+
+		<TextView
+			android:layout_width="75dp"
+			android:layout_height="@dimen/dp_30"
+			android:layout_gravity="center_vertical"
+			android:background="@drawable/bg_invite"
+			android:gravity="center"
+			android:text="同意"
+			android:textColor="@color/color0084ff"/>
+
+		<TextView
+			android:layout_marginLeft="@dimen/dp_10"
+			android:layout_width="75dp"
+			android:layout_height="@dimen/dp_30"
+			android:layout_gravity="center_vertical"
+			android:background="@drawable/bg_nagetive"
+			android:gravity="center"
+			android:text="忽略"
+			android:textColor="@color/colorCCC"/>
+	</LinearLayout>
+	<include layout="@layout/layout_general_divider" />
+</RelativeLayout>
