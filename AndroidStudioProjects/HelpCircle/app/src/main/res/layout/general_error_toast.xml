@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_centerInParent="true"
+	android:gravity="center"
+	android:orientation="vertical"
+	android:paddingBottom="25dp"
+	android:paddingLeft="@dimen/dp_44"
+	android:paddingRight="@dimen/dp_44"
+	android:paddingTop="22dp">
+
+	<TextView
+		android:id="@+id/mTvMsg"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="助力成功"
+		android:textColor="@color/white"
+		android:textSize="@dimen/sp_16"/>
+
+	<ImageView
+		android:id="@+id/mIvMsg"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="21dp"
+		android:src="@drawable/ic_back"/>
+</LinearLayout>

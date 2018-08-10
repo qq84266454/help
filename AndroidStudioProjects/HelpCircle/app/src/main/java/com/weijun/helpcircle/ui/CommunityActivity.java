@@ -26,7 +26,7 @@ public class CommunityActivity extends BaseActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
-        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.icon_friend));
+        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.set_write));
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".ui.MyQRCodeActivity">
+
+	<include layout="@layout/layout_top"/>
+
+	<include layout="@layout/layout_general_title"/>
+
+	<LinearLayout
+		android:id="@+id/mLLUserMoreInfo"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="@dimen/dp_16"
+		android:layout_marginLeft="@dimen/dp_16"
+		android:layout_marginRight="@dimen/dp_16"
+		android:layout_marginTop="@dimen/dp_12"
+		android:background="@drawable/user_center_1"
+		android:orientation="horizontal"
+		android:paddingBottom="@dimen/dp_12"
+		android:paddingLeft="@dimen/dp_8"
+		android:paddingRight="@dimen/dp_8"
+		android:paddingTop="@dimen/dp_12">
+
+		<de.hdodenhof.circleimageview.CircleImageView
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:src="@color/black"/>
+
+		<LinearLayout
+			style="@style/style_user_info_ll_image_2"
+			android:layout_marginLeft="@dimen/dp_16"
+			android:layout_weight="1"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_gravity="center"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="用户名"
+					android:textColor="@color/black"
+					android:textSize="@dimen/sp_17"/>
+				<ImageView
+					android:src="@drawable/icon_qq"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+			</LinearLayout>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="查看个人主页或编辑简介"
+				android:textColor="@color/colorBA"
+				android:textSize="@dimen/sp_14"/>
+		</LinearLayout>
+
+		<ImageView
+			style="@style/style_user_info_ll_image_2"
+			android:layout_marginLeft="@dimen/dp_10"
+			android:background="@drawable/bg_nagetive"
+			android:src="@drawable/arrow_right"/>
+	</LinearLayout>
+
+	<FrameLayout
+		android:layout_gravity="center_horizontal"
+		android:layout_width="240dp"
+		android:layout_height="240dp">
+		<ImageView
+			android:src="@color/color94"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+		<ImageView
+			android:layout_gravity="center"
+			android:background="@drawable/bg_general_radius_10"
+			android:layout_width="50dp"
+			android:layout_height="50dp"/>
+	</FrameLayout>
+	<TextView
+		android:layout_marginTop="@dimen/dp_30"
+		android:textSize="@dimen/sp_14"
+		android:textColor="@color/colorBA"
+		android:text="用互动圈扫描二维码，加我好友"
+		android:layout_gravity="center_horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
+</LinearLayout>

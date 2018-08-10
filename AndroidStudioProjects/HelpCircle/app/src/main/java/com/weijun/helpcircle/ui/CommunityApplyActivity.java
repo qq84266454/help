@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.weijun.helpcircle.R;
+import com.weijun.helpcircle.adapter.community.ApplyCommunityAdapter;
 import com.weijun.helpcircle.adapter.community.InviteCommunityAdapter;
 import com.weijun.helpcircle.base.BaseActivity;
 import com.weijun.helpcircle.pojo.User;
@@ -55,8 +56,8 @@ public class CommunityApplyActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        mTvTitle.setText("邀请加入社区");
-        InviteCommunityAdapter mAdapter = new InviteCommunityAdapter(testData());
+        mTvTitle.setText("入社申请");
+        ApplyCommunityAdapter mAdapter = new ApplyCommunityAdapter(testData());
         View view = LayoutInflater.from(this).inflate(R.layout.apply_community_header, null, false);
         mAdapter.setHeaderView(view);
         mRvCommuity.setLayoutManager(new LinearLayoutManager(this));

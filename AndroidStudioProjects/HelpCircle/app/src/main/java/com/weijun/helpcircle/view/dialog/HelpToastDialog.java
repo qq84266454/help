@@ -4,12 +4,15 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.ScreenUtils;
@@ -22,6 +25,24 @@ public class HelpToastDialog extends Dialog {
     public HelpToastDialog(@NonNull Context context, int resId) {
         super(context, R.style.Transparent);
         init(context, resId);
+    }
+
+
+    public void setText(int resId, String msg) {
+        View tv = findViewById(resId);
+        if (!(tv instanceof TextView)) {
+            throw new RuntimeException("必须为TextView");
+        }
+        ((TextView) tv).setText(msg);
+    }
+
+    public void setImage(int resId, int drawableId) {
+        View iv = findViewById(resId);
+        if (iv instanceof ImageView) {
+            ((ImageView) iv).setImageResource(drawableId);
+        } else {
+            throw new RuntimeException("必须为ImageView");
+        }
     }
 
     private void init(Context context, int resId) {

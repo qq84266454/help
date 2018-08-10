@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:background="@color/white"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+	<include layout="@layout/layout_top"/>
+
+	<include layout="@layout/layout_general_title"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:paddingLeft="@dimen/dp_16"
+		android:paddingRight="@dimen/dp_16">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="55dp"
+			android:text="请您输入图形验证码"
+			android:textColor="@color/color333"
+			android:textSize="@dimen/sp_24"/>
+
+		<ImageView
+			android:id="@+id/mIvCode"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dp_16"/>
+
+		<TextView
+			android:id="@+id/mTvRefreshCode"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="right"
+			android:layout_marginTop="@dimen/dp_16"
+			android:text="点击图片刷新"
+			android:textColor="#FF576B95"
+			android:textSize="@dimen/sp_12"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/dp_16"
+			android:layout_marginTop="@dimen/dp_4"
+			android:text="不区分大小写"
+			android:textColor="@color/colorBA"
+			android:textSize="@dimen/sp_12"/>
+
+		<com.weijun.helpcircle.view.widget.VerificationCodeView
+			android:id="@+id/mCodeView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			app:vcv_et_bg="@drawable/et_login_code"
+			app:vcv_et_cursor="@drawable/et_cursor"
+			app:vcv_et_inputType="text"
+			app:vcv_et_number="4"
+			app:vcv_et_text_color="@android:color/black"
+			app:vcv_et_text_size="@dimen/sp_12"/>
+	</LinearLayout>
+</LinearLayout>

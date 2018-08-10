@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	android:orientation="vertical"
+	>
+	<ImageView
+		android:id="@+id/mIvTop"
+		android:layout_width="match_parent"
+		android:layout_height="150dp"
+		android:src="@drawable/login_top"/>
+	<LinearLayout
+		android:layout_below="@id/mIvTop"
+		android:paddingLeft="62.5dp"
+		android:paddingRight="62.5dp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+
+
+		<TextView
+			android:id="@+id/mTvTitle"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="32dp"
+			android:layout_marginTop="22dp"
+			android:gravity="center"
+			android:text="@string/str_login_title"
+			android:textColor="@color/color333"
+			android:textSize="18sp"/>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="42.5dp">
+			<EditText
+				android:id="@+id/mEtUsername"
+				android:textSize="13sp"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@drawable/shape_et_bg"
+				android:hint="@string/str_phone"
+				android:padding="12dp"
+				android:textColorHint="@color/colorBA"/>
+
+			<!--<View-->
+				<!--android:layout_width="match_parent"-->
+				<!--android:layout_height="1dp"-->
+				<!--android:layout_alignParentBottom="true"-->
+				<!--android:background="@color/bg_login_edit"/>-->
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp">
+
+			<EditText
+				android:id="@+id/mEtPwd"
+				android:textSize="13sp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/shape_et_bg"
+				android:hint="@string/str_hint_check_code"
+				android:padding="12dp"
+				android:textColorHint="@color/colorBA"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="@string/str_get_check_code"
+				android:textColor="@color/color0084ff"/>
+
+		</RelativeLayout>
+
+		<TextView
+			android:id="@+id/mTvUserLogin"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="22dp"
+			android:background="@drawable/login_btn"
+			android:gravity="center"
+			android:paddingBottom="13dp"
+			android:paddingTop="13dp"
+			android:text="@string/str_login"
+			android:textColor="@color/white"/>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="45dp"
+			android:orientation="horizontal">
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_centerVertical="true"
+				android:layout_toLeftOf="@id/mTvOr"
+				android:background="@color/bg_login_edit"/>
+
+			<TextView
+				android:id="@+id/mTvOr"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:layout_marginLeft="19dp"
+				android:layout_marginRight="19dp"
+				android:background="@color/white"
+				android:text="@string/str_or"/>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_centerVertical="true"
+				android:layout_toRightOf="@id/mTvOr"
+				android:background="@color/bg_login_edit"/>
+		</RelativeLayout>
+
+		<TextView
+			android:id="@+id/mTvWeChatLogin"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/colore0"
+			android:gravity="center"
+			android:paddingBottom="13dp"
+			android:paddingTop="13dp"
+			android:text="@string/str_wx_login"
+			android:textColor="@color/black"/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="12dp"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_check_green"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="已阅读并同意"
+			android:textColor="@color/color9B"
+			android:textSize="11sp"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/str_copy_right"
+			android:textColor="@color/colorCopyRight"
+			android:textSize="11sp"/>
+	</LinearLayout>
+</RelativeLayout>

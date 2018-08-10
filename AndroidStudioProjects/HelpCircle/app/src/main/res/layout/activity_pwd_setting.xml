@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+	<include layout="@layout/layout_top"/>
+
+	<include layout="@layout/layout_general_title"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:paddingLeft="@dimen/dp_16"
+		android:paddingRight="@dimen/dp_16">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="55dp"
+			android:text="设置登录密码"
+			android:textColor="@color/color333"
+			android:textSize="@dimen/sp_24"/>
+
+		<TextView
+			android:id="@+id/mTvPhoneHint"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="21dp"
+			android:layout_marginTop="@dimen/dp_16"
+			android:text="您可以使用设置的密码登录您的%s的账号"
+			android:textColor="#FF707070"
+			android:textSize="@dimen/sp_12"/>
+
+		<EditText
+			android:id="@+id/mEtPwd"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/dp_8"
+			android:background="@drawable/shape_et_bg"/>
+
+		<TextView
+			android:id="@+id/mTvPwdRegex"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dp_16"
+			android:singleLine="false"
+			android:text="需包含数字、字母、符号至少两种元素\n密码长度需8-16位"
+			android:textColor="@color/colorBA"
+			android:textSize="@dimen/sp_12"/>
+		<TextView
+			android:layout_marginTop="36dp"
+			android:id="@+id/mTvNext"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/dp_44"
+			android:background="@drawable/login_btn"
+			android:enabled="false"
+			android:gravity="center"
+			android:text="确定"
+			android:textColor="@color/white"
+			android:textSize="@dimen/sp_16"/>
+	</LinearLayout>
+</LinearLayout>

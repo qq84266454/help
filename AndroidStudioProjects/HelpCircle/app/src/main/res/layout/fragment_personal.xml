@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorf2"
+              android:orientation="vertical">
+
+	<include layout="@layout/layout_top"/>
+
+	<include layout="@layout/layout_general_title"/>
+
+	<android.support.v4.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/dp_10"
+				android:layout_marginTop="@dimen/dp_10"
+				android:background="@color/white"
+				android:orientation="vertical">
+
+				<LinearLayout
+					android:id="@+id/mLLUserMoreInfo"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true"
+					android:layout_marginBottom="@dimen/dp_16"
+					android:layout_marginLeft="@dimen/dp_16"
+					android:layout_marginRight="@dimen/dp_16"
+					android:layout_marginTop="@dimen/dp_12"
+					android:background="@drawable/user_center_1"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/dp_12"
+					android:paddingLeft="@dimen/dp_8"
+					android:paddingRight="@dimen/dp_8"
+					android:paddingTop="@dimen/dp_12">
+
+					<de.hdodenhof.circleimageview.CircleImageView
+						android:layout_width="60dp"
+						android:layout_height="60dp"
+						android:src="@color/black"/>
+
+					<LinearLayout
+						style="@style/style_user_info_ll_image_2"
+						android:layout_marginLeft="@dimen/dp_16"
+						android:layout_weight="1"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="用户名"
+							android:textColor="@color/black"
+							android:textSize="@dimen/sp_17"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="查看个人主页或编辑简介"
+							android:textColor="@color/colorBA"
+							android:textSize="@dimen/sp_14"/>
+					</LinearLayout>
+
+					<ImageView
+						style="@style/style_user_info_ll_image_2"
+						android:layout_marginLeft="@dimen/dp_10"
+						android:background="@drawable/bg_nagetive"
+						android:src="@drawable/arrow_right"/>
+				</LinearLayout>
+			</LinearLayout>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="75dp"
+				android:background="@color/white">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="@dimen/dp_16"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="互助币"
+						android:textColor="@color/color999"
+						android:textSize="@dimen/sp_14"/>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="4.99"
+						android:textColor="@color/black"
+						android:textSize="@dimen/sp_24"/>
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_alignParentRight="true"
+					android:layout_marginRight="@dimen/dp_16"
+					android:gravity="center_vertical"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="right"
+						android:text="溢价"
+						android:textColor="@color/color999"
+						android:textSize="@dimen/sp_14"/>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="10%"
+						android:textColor="#FFF76260"
+						android:textSize="@dimen/sp_24"/>
+				</LinearLayout>
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="66dp"
+				android:background="@drawable/bg_userinfo_table"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					style="@style/style_userinfo_table_item">
+
+					<TextView
+						style="@style/style_userinfo_table_item_text1"
+						android:text="拉新能力"/>
+
+					<RelativeLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<TextView
+							style="@style/style_userinfo_table_item_text2"
+							android:text="200人"/>
+
+						<TextView
+							style="@style/style_userinfo_table_item_text3"
+							android:layout_toLeftOf="@+id/mIv1"
+							android:text="全网top10"/>
+
+						<ImageView
+							android:id="@+id/mIv1"
+							style="@style/style_userinfo_table_item_imageview"
+							android:src="@drawable/arrow_right"/>
+					</RelativeLayout>
+				</LinearLayout>
+
+				<View
+					android:layout_width="1px"
+					android:layout_height="match_parent"
+					android:background="@color/color_release_success_divider"/>
+
+				<LinearLayout
+					style="@style/style_userinfo_table_item">
+
+					<TextView
+						style="@style/style_userinfo_table_item_text1"
+						android:text="好友分红"/>
+
+					<RelativeLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<TextView
+							style="@style/style_userinfo_table_item_text2"
+							android:text="$150.00"/>
+
+						<TextView
+							style="@style/style_userinfo_table_item_text3"
+							android:layout_toLeftOf="@id/mIv2"
+							android:text="全网top10"/>
+
+						<ImageView
+							android:id="@+id/mIv2"
+							style="@style/style_userinfo_table_item_imageview"
+							android:src="@drawable/arrow_right"/>
+					</RelativeLayout>
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="66dp"
+				android:background="@drawable/bg_userinfo_table"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					style="@style/style_userinfo_table_item">
+
+					<TextView
+						style="@style/style_userinfo_table_item_text1"
+						android:text="转发分红"/>
+
+					<RelativeLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<TextView
+							style="@style/style_userinfo_table_item_text2"
+							android:text="200人"/>
+
+						<TextView
+							style="@style/style_userinfo_table_item_text3"
+							android:layout_toLeftOf="@+id/mIv3"
+							android:text="全网top10"/>
+
+						<ImageView
+							android:id="@+id/mIv3"
+							style="@style/style_userinfo_table_item_imageview"
+							android:src="@drawable/arrow_right"/>
+					</RelativeLayout>
+				</LinearLayout>
+
+				<View
+					android:layout_width="1px"
+					android:layout_height="match_parent"
+					android:background="@color/color_release_success_divider"/>
+
+				<LinearLayout
+					style="@style/style_userinfo_table_item">
+
+					<TextView
+						style="@style/style_userinfo_table_item_text1"
+						android:text="全网用户"/>
+
+					<RelativeLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<TextView
+							style="@style/style_userinfo_table_item_text2"
+							android:text="4000"/>
+
+						<TextView
+							style="@style/style_userinfo_table_item_text3"
+							android:layout_toLeftOf="@id/mIv2"
+							android:text="全网top10"/>
+
+						<ImageView
+							android:id="@+id/mIv2"
+							style="@style/style_userinfo_table_item_imageview"
+							android:src="@drawable/arrow_right"/>
+					</RelativeLayout>
+				</LinearLayout>
+			</LinearLayout>
+
+
+			<LinearLayout
+				style="@style/style_userinfo_item_ll">
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:src="@drawable/icon_qq"/>
+
+				<TextView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginLeft="@dimen/dp_16"
+					android:layout_weight="1"
+					android:text="我的社区"/>
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginRight="@dimen/dp_16"
+					android:src="@drawable/arrow_right"/>
+			</LinearLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="0.5dp"
+				android:layout_marginLeft="@dimen/dp_16"
+				android:background="@color/color_release_success_divider"/>
+
+			<LinearLayout
+				style="@style/style_userinfo_item_ll"
+				>
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:src="@drawable/icon_qq"/>
+
+				<TextView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginLeft="@dimen/dp_16"
+					android:layout_weight="1"
+					android:text="我的好友"/>
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginRight="@dimen/dp_16"
+					android:src="@drawable/arrow_right"/>
+			</LinearLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="0.5dp"
+				android:layout_marginLeft="@dimen/dp_16"
+				android:background="@color/color_release_success_divider"/>
+
+			<LinearLayout
+				style="@style/style_userinfo_item_ll">
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:src="@drawable/icon_qq"/>
+
+				<TextView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginLeft="@dimen/dp_16"
+					android:layout_weight="1"
+					android:text="我的消息"/>
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginRight="@dimen/dp_16"
+					android:src="@drawable/arrow_right"/>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_marginBottom="@dimen/dp_20"
+				style="@style/style_userinfo_item_ll"
+				android:layout_marginTop="@dimen/dp_10">
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:src="@drawable/icon_qq"/>
+
+				<TextView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginLeft="@dimen/dp_16"
+					android:layout_weight="1"
+					android:text="设置"/>
+
+				<ImageView
+					style="@style/style_user_info_ll_image_2"
+					android:layout_marginRight="@dimen/dp_16"
+					android:src="@drawable/arrow_right"/>
+			</LinearLayout>
+		</LinearLayout>
+	</android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

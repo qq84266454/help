@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:background="@color/white"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+	<include layout="@layout/layout_top"/>
+
+	<include layout="@layout/layout_general_title"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:paddingLeft="@dimen/dp_16"
+		android:paddingRight="@dimen/dp_16">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="55dp"
+			android:text="请您输入验证码"
+			android:textColor="@color/color333"
+			android:textSize="@dimen/sp_24"/>
+
+		<TextView
+			android:id="@+id/mTvPhoneHint"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/dp_16"
+			android:text="手机号码"
+			android:textColor="#FF707070"
+			android:textSize="@dimen/sp_12"/>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="36dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:text="6位数字验证码"
+				android:textColor="@color/colorBA"
+				android:textSize="@dimen/sp_12"/>
+
+			<TextView
+				android:id="@+id/mTvCount"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:text="60s"
+				android:textColor="@color/color0084ff"
+				android:textSize="@dimen/sp_12"/>
+
+			<TextView
+				android:id="@+id/mTvReGet"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:background="@drawable/bg_re_get_code"
+				android:padding="@dimen/dp_4"
+				android:text="重新获取"
+				android:textColor="@color/color0084ff"/>
+		</RelativeLayout>
+
+		<com.weijun.helpcircle.view.widget.VerificationCodeView
+			android:layout_marginTop="@dimen/dp_16"
+			android:id="@+id/mCodeView"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			app:vcv_et_bg="@drawable/et_login_code"
+			app:vcv_et_cursor="@drawable/et_cursor"
+			app:vcv_et_inputType="text"
+			app:vcv_et_number="6"
+			app:vcv_et_text_color="@android:color/black"
+			app:vcv_et_text_size="@dimen/sp_12"/>
+	</LinearLayout>
+</LinearLayout>

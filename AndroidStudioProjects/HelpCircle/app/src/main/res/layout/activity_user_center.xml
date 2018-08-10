@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/mRootView"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/white">
+
+	<FrameLayout
+		app:layout_collapseMode="parallax"
+		android:layout_width="match_parent"
+		android:layout_height="400dp">
+		<ImageView
+			android:id="@+id/iv_parallax"
+			android:layout_width="match_parent"
+			android:layout_height="264dp"
+			android:layout_marginTop="-100dp"
+			android:adjustViewBounds="true"
+			android:contentDescription="@string/app_name"
+			android:scaleType="centerCrop"
+			android:src="@drawable/homepage_header"
+			/>
+	</FrameLayout>
+
+	<!--<com.scwang.smartrefresh.layout.SmartRefreshLayout-->
+		<!--android:id="@+id/refreshLayout"-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height="match_parent"-->
+		<!--app:srlEnablePreviewInEditMode="false">-->
+
+		<android.support.design.widget.CoordinatorLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<android.support.design.widget.AppBarLayout
+				android:id="@+id/appbar"
+				android:layout_width="match_parent"
+				android:layout_height="400dp"
+				android:background="@android:color/transparent"
+				android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+				app:elevation="0dp"
+				app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+				<android.support.design.widget.CollapsingToolbarLayout
+					android:id="@+id/collapsing_toolbar"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					app:contentScrim="@color/transparent_background"
+					app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+					<RelativeLayout
+						android:id="@+id/rl_allinfo"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="104dp"
+						>
+
+						<de.hdodenhof.circleimageview.CircleImageView
+							android:id="@+id/iv_head"
+							android:layout_width="120dp"
+							android:layout_height="120dp"
+							android:layout_centerHorizontal="true"
+							android:src="@drawable/icon_qq"/>
+
+						<TextView
+							android:id="@+id/nickname"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_below="@id/iv_head"
+							android:layout_centerHorizontal="true"
+							android:layout_margin="@dimen/dp_5"
+							android:text="用户昵称"
+							android:textColor="@color/black"
+							android:textSize="@dimen/sp_24"/>
+
+						<TextView
+							android:id="@+id/mTvIntro"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_below="@id/nickname"
+							android:layout_centerHorizontal="true"
+							android:layout_margin="@dimen/dp_5"
+							android:text="斜杠青年"
+							android:textColor="@color/color94"
+							android:textSize="@dimen/sp_15"/>
+
+						<TextView
+							android:id="@+id/mTvEdit"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_below="@id/mTvIntro"
+							android:layout_centerHorizontal="true"
+							android:layout_margin="@dimen/dp_12"
+							android:background="@drawable/login_btn"
+							android:paddingBottom="@dimen/dp_10"
+							android:paddingLeft="34dp"
+							android:paddingRight="34dp"
+							android:paddingTop="@dimen/dp_10"
+							android:text="编辑资料"
+							android:textColor="@color/white"
+							android:textSize="@dimen/sp_15"/>
+
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:layout_below="@id/mTvEdit"
+							android:orientation="horizontal">
+
+							<LinearLayout
+								android:id="@+id/mLLCode"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center"
+								android:orientation="horizontal">
+
+								<ImageView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:src="@drawable/icon_share"/>
+
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_marginLeft="@dimen/dp_8"
+									android:text="助友二维码"
+									android:textColor="@color/black"/>
+							</LinearLayout>
+
+							<LinearLayout
+								android:id="@+id/mLLPrivate"
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center"
+								android:orientation="horizontal">
+
+								<ImageView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:src="@drawable/icon_share"/>
+
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_marginLeft="@dimen/dp_8"
+									android:text="隐私策略"
+									android:textColor="@color/black"/>
+							</LinearLayout>
+						</LinearLayout>
+					</RelativeLayout>
+					<!-- 设置标题-->
+					<android.support.v7.widget.Toolbar
+						android:id="@+id/toolbar"
+						style="@style/AppTheme.Toolbar"
+						android:background="@android:color/transparent"
+						app:layout_collapseMode="pin">
+
+						<ImageView
+							android:id="@+id/iv_back"
+							android:layout_width="10dp"
+							android:layout_height="17dp"
+							android:layout_gravity="left"
+							android:textSize="16sp"/>
+
+						<android.support.v7.widget.ButtonBarLayout
+							android:id="@+id/buttonBarLayout"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:gravity="center"
+							android:visibility="invisible">
+
+							<ImageView
+								android:id="@+id/toolbar_avatar"
+								android:layout_width="32dp"
+								android:layout_height="32dp"
+								android:layout_marginRight="@dimen/dp_5"
+								android:src="@drawable/icon_qq"/>
+
+							<TextView
+								android:id="@+id/tv_title"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center"
+								android:layout_marginLeft="@dimen/dp_5"
+								android:text="用户名"
+								android:textColor="@color/black"
+								android:textSize="16sp"/>
+						</android.support.v7.widget.ButtonBarLayout>
+
+						<ImageView
+							android:id="@+id/iv_date"
+							android:layout_width="20dp"
+							android:layout_height="20dp"
+							android:layout_gravity="right"
+							android:textSize="16sp"/>
+					</android.support.v7.widget.Toolbar>
+				</android.support.design.widget.CollapsingToolbarLayout>
+			</android.support.design.widget.AppBarLayout>
+
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/mRv"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginTop="@dimen/dp_10"
+				android:orientation="vertical"
+				app:layout_behavior="@string/appbar_scrolling_view_behavior"
+				app:layout_scrollFlags="scroll|exitUntilCollapsed"/>
+
+
+		</android.support.design.widget.CoordinatorLayout>
+	<!--</com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
+
+</FrameLayout>
