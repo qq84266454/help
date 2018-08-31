@@ -2,6 +2,9 @@ package com.weijun.helpcircle.utils;
 
 import com.blankj.utilcode.util.StringUtils;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 
 public class PhoneUtils {
@@ -40,5 +43,21 @@ public class PhoneUtils {
         }
 
         return sb.toString();
+    }
+
+    public static Map<String, String> objectToMap(Object obj) throws Exception {
+        if (obj == null) {
+            return null;
+        }
+
+        Map<String, String> map = new HashMap();
+
+        Field[] declaredFields = obj.getClass().getDeclaredFields();
+        for (Field field : declaredFields) {
+            field.setAccessible(true);
+            map.put(field.getName(), (String) field.get(obj));
+        }
+
+        return map;
     }
 }

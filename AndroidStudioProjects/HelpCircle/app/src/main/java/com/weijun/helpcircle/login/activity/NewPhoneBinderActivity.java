@@ -51,6 +51,7 @@ public class NewPhoneBinderActivity extends BaseActivity {
         Intent intent = new Intent(this, PhoneCodeActivity.class);
         intent.putExtra("phone", getIntent().getStringExtra("phone"));
         startActivity(intent);
+        finish();
     }
 
     @OnClick({R.id.mLLLeft, R.id.mTvRefreshCode})

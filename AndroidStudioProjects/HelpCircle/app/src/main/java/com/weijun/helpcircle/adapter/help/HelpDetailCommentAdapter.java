@@ -2,13 +2,12 @@ package com.weijun.helpcircle.adapter.help;
 
 import android.app.Activity;
 import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.weijun.helpcircle.R;
-import com.weijun.helpcircle.pojo.Comment;
+import com.weijun.helpcircle.pojo.test.Comment;
 
 import java.util.List;
 

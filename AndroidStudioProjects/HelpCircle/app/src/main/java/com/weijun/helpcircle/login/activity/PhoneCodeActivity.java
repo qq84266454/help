@@ -45,6 +45,7 @@ public class PhoneCodeActivity extends BaseActivity {
                 Intent intent = new Intent(PhoneCodeActivity.this, PwdSettingActivity.class);
                 intent.putExtra("phone", phone);
                 startActivity(intent);
+                finish();
             }
         });
     }

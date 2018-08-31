@@ -4,23 +4,34 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.RegexUtils;
 import com.blankj.utilcode.util.SizeUtils;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.weijun.helpcircle.R;
 import com.weijun.helpcircle.base.BaseActivity;
 import com.weijun.helpcircle.http.ApiRequest;
 import com.weijun.helpcircle.http.ApiService;
+import com.weijun.helpcircle.http.InterfaceParameters;
+import com.weijun.helpcircle.pojo.HelpCircleViewBean;
+import com.weijun.helpcircle.pojo.ResponseBean;
 import com.xw.repo.XEditText;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PhoneLoginActivity extends BaseActivity {
 
@@ -84,10 +95,43 @@ public class PhoneLoginActivity extends BaseActivity {
     }
 
     private void doLogin() {
-        Intent intent = null;
-        int i = new Random().nextInt(1);
-        intent = new Intent(this, NewPhoneBinderActivity.class);
-        intent.putExtra("phone", mEtPhone.getText().toString());
-        startActivity(intent);
+        ApiService apiService = ApiRequest.getInstance(InterfaceParameters.BASE_URL).create(ApiService.class);
+//        Call<ResponseBody> call = apiService.doDoubanApi("25", "2");
+        Call<ResponseBody> call = apiService.isPhoneRegister();
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        String string = response.body().string();
+                        Log.e(TAG, string);
+                        ResponseBean<List<HelpCircleViewBean>> responseBean = new Gson().fromJson(string, new TypeToken<ResponseBean<List<HelpCircleViewBean>>>() {
+                        }.getType());
+//                        ResponseBean responseBean = new Gson().fromJson(string, ResponseBean.class);
+//                        Object resData = responseBean.getResData();
+//                        String s = new Gson().toJson(resData);
+                        Log.e(TAG, responseBean.toString());
+//                        List<HelpCircleViewBean> list = new Gson().fromJson(s, new TypeToken<List<HelpCircleViewBean>>() {
+//                        }.getType());
+//                        Log.e(TAG, list.toString());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Intent intent;
+                    int i = new Random().nextInt(1);
+                    intent = new Intent(PhoneLoginActivity.this, NewPhoneBinderActivity.class);
+                    intent.putExtra("phone", mEtPhone.getText().toString());
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.e(TAG, "onFailure: ", t);
+            }
+        });
+
     }
 }

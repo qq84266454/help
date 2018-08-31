@@ -84,10 +84,12 @@ public class PwdSettingActivity extends BaseActivity {
             if (dialog == null) {
                 dialog = new HelpToastDialog(this, R.layout.general_error_toast);
                 dialog.setText(R.id.mTvMsg, "设置密码格式不正确");
+                dialog.setImage(R.id.mIvMsg, R.drawable.error_reminder);
             }
             dialog.showAndAutoDismiss();
         } else {
             startActivity(new Intent(this, MainActivity.class));
+            finish();
         }
 
     }

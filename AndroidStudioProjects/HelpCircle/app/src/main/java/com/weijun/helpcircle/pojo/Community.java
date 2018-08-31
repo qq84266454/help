@@ -1,5 +1,7 @@
 package com.weijun.helpcircle.pojo;
 
+import com.weijun.helpcircle.pojo.test.Helper;
+
 import java.util.List;
 
 public class Community {
