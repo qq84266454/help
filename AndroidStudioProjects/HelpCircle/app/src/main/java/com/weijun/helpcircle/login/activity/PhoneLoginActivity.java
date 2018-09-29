@@ -13,8 +13,10 @@ import com.blankj.utilcode.util.RegexUtils;
 import com.blankj.utilcode.util.SizeUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.weijun.helpcircle.R;
 import com.weijun.helpcircle.base.BaseActivity;
+import com.weijun.helpcircle.base.MyApp;
 import com.weijun.helpcircle.http.ApiRequest;
 import com.weijun.helpcircle.http.ApiService;
 import com.weijun.helpcircle.http.InterfaceParameters;
@@ -84,14 +86,26 @@ public class PhoneLoginActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.mTvNext})
+    @OnClick({R.id.mTvNext,R.id.mIvWXLogin})
     public void onViewClicked(View view) {
         switch (view.getId()) {
 
             case R.id.mTvNext:
                 doLogin();
                 break;
+            case R.id.mIvWXLogin:
+                doWXLogin();
+                break;
         }
+    }
+
+    private void doWXLogin() {
+        // send oauth request
+        final SendAuth.Req req = new SendAuth.Req();
+        req.scope = "snsapi_userinfo";
+        req.state = "wechat_sdk_demo_test";
+        MyApp.getApplication().getWXApi().sendReq(req);
+//        MyApp.getApplication().getWXApi().openWXApp();
     }
 
     private void doLogin() {
@@ -111,9 +125,7 @@ public class PhoneLoginActivity extends BaseActivity {
 //                        Object resData = responseBean.getResData();
 //                        String s = new Gson().toJson(resData);
                         Log.e(TAG, responseBean.toString());
-//                        List<HelpCircleViewBean> list = new Gson().fromJson(s, new TypeToken<List<HelpCircleViewBean>>() {
-//                        }.getType());
-//                        Log.e(TAG, list.toString());
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

@@ -1,6 +1,9 @@
 package com.weijun.helpcircle.pojo;
 
-public class HelpCircleMsgBean {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class HelpCircleMsgBean implements Parcelable{
 
     /**
      * hcm_Id : 10
@@ -21,6 +24,32 @@ public class HelpCircleMsgBean {
     private String reply_content;
     private String reply_time;
     private String help_circle_id;
+
+    public HelpCircleMsgBean(){
+
+    }
+    protected HelpCircleMsgBean(Parcel in) {
+        hcm_Id = in.readString();
+        reply_id = in.readString();
+        reply_nick_name = in.readString();
+        recieve_id = in.readString();
+        recieve_nick_name = in.readString();
+        reply_content = in.readString();
+        reply_time = in.readString();
+        help_circle_id = in.readString();
+    }
+
+    public static final Creator<HelpCircleMsgBean> CREATOR = new Creator<HelpCircleMsgBean>() {
+        @Override
+        public HelpCircleMsgBean createFromParcel(Parcel in) {
+            return new HelpCircleMsgBean(in);
+        }
+
+        @Override
+        public HelpCircleMsgBean[] newArray(int size) {
+            return new HelpCircleMsgBean[size];
+        }
+    };
 
     public String getHcm_Id() {
         return hcm_Id;
@@ -84,5 +113,22 @@ public class HelpCircleMsgBean {
 
     public void setHelp_circle_id(String help_circle_id) {
         this.help_circle_id = help_circle_id;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(hcm_Id);
+        dest.writeString(reply_id);
+        dest.writeString(reply_nick_name);
+        dest.writeString(recieve_id);
+        dest.writeString(recieve_nick_name);
+        dest.writeString(reply_content);
+        dest.writeString(reply_time);
+        dest.writeString(help_circle_id);
     }
 }

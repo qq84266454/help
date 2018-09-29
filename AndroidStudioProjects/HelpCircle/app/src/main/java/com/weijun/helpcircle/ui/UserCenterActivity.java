@@ -155,7 +155,7 @@ public class UserCenterActivity extends BaseActivity {
                 }
 
                 @Override
-                public void onItemCancelClick() {
+                public void onItemCancelClick(BottomPopup popup) {
 
                 }
             });

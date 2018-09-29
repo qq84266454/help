@@ -18,6 +18,7 @@
 			android:orientation="vertical">
 
 			<RelativeLayout
+				android:paddingBottom="@dimen/dp_18"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:background="@color/white"
@@ -37,17 +38,39 @@
 					android:textColorHint="@color/colorC2"
 					android:textSize="@dimen/sp_14"/>
 
-				<android.support.v7.widget.RecyclerView
-					android:id="@+id/mRvAddImg"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_below="@id/mEtContent"/>
 
 				<android.support.v7.widget.RecyclerView
 					android:id="@+id/mRvHelpImg"
-					android:layout_width="match_parent"
+					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_below="@id/mEtContent"/>
+
+
+				<LinearLayout
+					android:id="@+id/mLLAddImg"
+					android:layout_width="78dp"
+					android:layout_height="78dp"
+					android:layout_below="@id/mEtContent"
+					android:layout_toRightOf="@id/mRvHelpImg"
+					android:background="#FFF4F5F9"
+					android:gravity="center"
+					android:orientation="vertical">
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:src="@drawable/add_img"/>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="@dimen/dp_4"
+						android:text="添加"
+						android:textColor="@color/color888"
+						android:textSize="@dimen/sp_12"/>
+				</LinearLayout>
+
 			</RelativeLayout>
 
 			<LinearLayout
@@ -90,9 +113,10 @@
 					>
 
 					<TextView
+						android:id="@+id/mTvTotalLeft"
 						style="@style/style_help_release_text_general_item"
 						android:layout_centerVertical="true"
-						android:text="总金额"/>
+						android:text="总投入"/>
 
 					<TextView
 						android:id="@+id/mTvRewardRight"
@@ -102,13 +126,18 @@
 						android:text="贝"/>
 
 					<EditText
-						android:layout_width="wrap_content"
+						android:layout_toRightOf="@id/mTvTotalLeft"
+						android:inputType="number"
+						android:id="@+id/mTvTotalCount"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_centerVertical="true"
 						android:layout_toLeftOf="@id/mTvRewardRight"
 						android:background="@null"
+						android:gravity="right"
 						android:hint="0.00"
-						android:textColor="@color/colorB2"/>
+						android:textColor="@color/black"
+						android:textColorHint="@color/colorB2"/>
 				</RelativeLayout>
 
 				<View
@@ -123,9 +152,10 @@
 					>
 
 					<TextView
+						android:id="@+id/mTvPartLeft"
 						style="@style/style_help_release_text_general_item"
 						android:layout_centerVertical="true"
-						android:text="奖励人数"/>
+						android:text="最大转发人数"/>
 
 					<TextView
 						android:id="@+id/mTvCountRight"
@@ -135,14 +165,18 @@
 						android:text="人"/>
 
 					<EditText
-						android:layout_width="wrap_content"
+						android:textColor="@color/black"
+						android:layout_toRightOf="@+id/mTvPartLeft"
+						android:gravity="right"
+						android:id="@+id/mTvPartCount"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_centerVertical="true"
 						android:layout_toLeftOf="@id/mTvCountRight"
 						android:background="@null"
 						android:hint="填写人数"
 						android:inputType="number"
-						android:textColor="@color/colorB2"/>
+						android:textColorHint="@color/colorB2"/>
 				</RelativeLayout>
 			</LinearLayout>
 

@@ -8,15 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
+import com.bumptech.glide.request.target.ThumbnailImageViewTarget;
 import com.weijun.helpcircle.R;
 import com.weijun.helpcircle.base.BaseActivity;
+
+import org.w3c.dom.Text;
+
+import butterknife.OnClick;
 
 /**
  * Created by LoveAndPeace on 2017/11/20.
  */
 
-public class BottomPopup extends PopupWindow implements View.OnClickListener {
+public class BottomPopup extends PopupWindow {
     private final BaseActivity activity;
     private View view;
 
@@ -31,7 +37,7 @@ public class BottomPopup extends PopupWindow implements View.OnClickListener {
 
         void onItemTwoClick();
 
-        void onItemCancelClick();
+        void onItemCancelClick(BottomPopup popup);
     }
 
     public BottomPopup(BaseActivity activity) {
@@ -50,11 +56,34 @@ public class BottomPopup extends PopupWindow implements View.OnClickListener {
                 light(1f);
             }
         });
+        view.findViewById(R.id.mTvOne).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null)
+                    listener.onItemOneClick();
+                dismiss();
+            }
+        });
+        view.findViewById(R.id.mTvTwo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null)
+                    listener.onItemTwoClick();
+                dismiss();
+            }
+        });
+        view.findViewById(R.id.mTvCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null)
+                    listener.onItemCancelClick(BottomPopup.this);
+            }
+        });
     }
 
     public BottomPopup(BaseActivity activity, OnItemClickListener listener) {
         this(activity);
-        this.listener = listener;
+        setListener(listener);
     }
 
 
@@ -69,22 +98,8 @@ public class BottomPopup extends PopupWindow implements View.OnClickListener {
         activity.getWindow().setAttributes(lp);
     }
 
-
-    public void onClick(View view) {
-        if (listener != null) {
-            switch (view.getId()) {
-                case R.id.mTvOne:
-                    listener.onItemOneClick();
-                    break;
-                case R.id.mTvTwo:
-                    listener.onItemTwoClick();
-                    break;
-                case R.id.mTvCancel:
-                    listener.onItemCancelClick();
-                    break;
-            }
-        }
+    public void setText(int resId, String text) {
+        ((TextView) view.findViewById(resId)).setText(text);
     }
-
 
 }

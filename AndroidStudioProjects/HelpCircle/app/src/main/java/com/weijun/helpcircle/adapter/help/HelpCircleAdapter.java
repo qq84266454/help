@@ -11,13 +11,17 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.TimeUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.weijun.helpcircle.R;
 import com.weijun.helpcircle.pojo.HelpCircleMsgBean;
 import com.weijun.helpcircle.pojo.HelpCircleViewBean;
+import com.weijun.helpcircle.ui.MainActivity;
 import com.weijun.helpcircle.utils.DateUtils;
 import com.weijun.helpcircle.utils.TimeCalc;
+import com.weijun.helpcircle.view.CommentRecyclerView;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -27,6 +31,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, BaseViewHolder> {
+    private RecyclerView recyclerView;
     private Activity activity;
     private boolean isOpen;
 
@@ -42,16 +47,20 @@ public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, Base
         super(layoutResId);
     }
 
-    public HelpCircleAdapter(Activity activtity, @Nullable List<HelpCircleViewBean> data) {
+    public HelpCircleAdapter(Activity activity, @Nullable List<HelpCircleViewBean> data, RecyclerView recyclerView) {
         this(R.layout.item_focus, data);
-        this.activity = activtity;
+        this.activity = activity;
+        this.recyclerView = recyclerView;
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, HelpCircleViewBean item) {
+    protected void convert(final BaseViewHolder helper, HelpCircleViewBean item) {
         isOpen = false;
         CircleImageView mIvPosterImg = helper.getView(R.id.mIvPosterImg);
+
         TextView mTvPosterName = helper.getView(R.id.mTvPosterName);
+
+        mTvPosterName.setText(item.getPublisherNickname());
         TextView mTvPosterIntro = helper.getView(R.id.mTvPosterIntro);
         TextView mTvHelpReward = helper.getView(R.id.mTvHelpReward);
         mTvHelpReward.setText(item.getCoin_available());
@@ -69,20 +78,33 @@ public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, Base
                 new Date()), item.getView_times()));
         final TextView mWatchMoreTv = helper.getView(R.id.mWatchMoreTv);
         // 设置评论者的RecyclerView
-        RecyclerView mHelpCommentRv = helper.getView(R.id.mHelpCommentRv);
+        CommentRecyclerView mHelpCommentRv = helper.getView(R.id.mHelpCommentRv);
+        mHelpCommentRv.setOnCommentClickListener(new CommentRecyclerView.OnCommentClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                // 点击评论时的操作.
+                if (recyclerView != null) {
+//                    ((MainActivity)activity).showDialog();
+                    ((MainActivity) activity).showInputDialog(recyclerView, view, helper.getAdapterPosition(), position);
+
+                } else {
+                    ToastUtils.showShort("为什么总是为空啊");
+                }
+            }
+        });
         LinearLayoutManager manager = new LinearLayoutManager(activity);
         mHelpCommentRv.setLayoutManager(manager);
-        final HelpCommentAdapter helpCommentAdapter = new HelpCommentAdapter();
+        final HelpCommentAdapter helpCommentAdapter = new HelpCommentAdapter(mHelpCommentRv);
         final List<HelpCircleMsgBean> msgBeans = item.getMsgBeans();
         if (msgBeans == null || msgBeans.size() == 0)
             return;
-        if (msgBeans.size() > 3) {
-            helpCommentAdapter.addData(msgBeans.subList(0, 2));
-            mWatchMoreTv.setVisibility(View.VISIBLE);
-        } else {
+//        if (msgBeans.size() > 3) {
+//            helpCommentAdapter.addData(msgBeans.subList(0, 2));
+//            mWatchMoreTv.setVisibility(View.VISIBLE);
+//        } else {
             helpCommentAdapter.addData(msgBeans);
-            mWatchMoreTv.setVisibility(View.GONE);
-        }
+//            mWatchMoreTv.setVisibility(View.GONE);
+//        }
         mHelpCommentRv.setAdapter(helpCommentAdapter);
 
 
@@ -90,11 +112,12 @@ public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, Base
             @Override
             public void onClick(View v) {
                 if (isOpen) {
-                    // 已经展开
-                    mWatchMoreTv.setText("收起评论");
+                    // 已经展开 点击 就要收起
+                    mWatchMoreTv.setText(String.format("查看更多%d条评论", msgBeans.size()-2));
                     helpCommentAdapter.setNewData(msgBeans.subList(0, 2));
                 } else {
-                    mWatchMoreTv.setText("查看更多" + msgBeans.size() + "条评论");
+                    mWatchMoreTv.setText("收起评论");
+
                     helpCommentAdapter.setNewData(msgBeans);
                 }
                 isOpen = !isOpen;

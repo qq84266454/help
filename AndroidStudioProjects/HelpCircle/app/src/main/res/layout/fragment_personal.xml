@@ -70,7 +70,6 @@
 					<ImageView
 						style="@style/style_user_info_ll_image_2"
 						android:layout_marginLeft="@dimen/dp_10"
-						android:background="@drawable/bg_nagetive"
 						android:src="@drawable/arrow_right"/>
 				</LinearLayout>
 			</LinearLayout>
@@ -95,6 +94,7 @@
 						android:textSize="@dimen/sp_14"/>
 
 					<TextView
+						android:id="@+id/mTvBalance"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="4.99"
@@ -119,6 +119,7 @@
 						android:textSize="@dimen/sp_14"/>
 
 					<TextView
+						android:id="@+id/mTvYiJia"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="10%"
@@ -145,10 +146,12 @@
 						android:layout_height="match_parent">
 
 						<TextView
+							android:id="@+id/mTvNewFriend"
 							style="@style/style_userinfo_table_item_text2"
 							android:text="200人"/>
 
 						<TextView
+							android:id="@+id/mTvNewFriendRate"
 							style="@style/style_userinfo_table_item_text3"
 							android:layout_toLeftOf="@+id/mIv1"
 							android:text="全网top10"/>
@@ -177,12 +180,14 @@
 						android:layout_height="match_parent">
 
 						<TextView
+							android:id="@+id/mTvShare"
 							style="@style/style_userinfo_table_item_text2"
 							android:text="$150.00"/>
 
 						<TextView
+							android:id="@+id/mTvShareRate"
 							style="@style/style_userinfo_table_item_text3"
-							android:layout_toLeftOf="@id/mIv2"
+							android:layout_toLeftOf="@+id/mIv2"
 							android:text="全网top10"/>
 
 						<ImageView
@@ -211,10 +216,12 @@
 						android:layout_height="match_parent">
 
 						<TextView
+							android:id="@+id/mTvForward"
 							style="@style/style_userinfo_table_item_text2"
 							android:text="200人"/>
 
 						<TextView
+							android:id="@+id/mTvForwardRate"
 							style="@style/style_userinfo_table_item_text3"
 							android:layout_toLeftOf="@+id/mIv3"
 							android:text="全网top10"/>
@@ -243,16 +250,18 @@
 						android:layout_height="match_parent">
 
 						<TextView
+							android:id="@+id/mTvAllUser"
 							style="@style/style_userinfo_table_item_text2"
 							android:text="4000"/>
 
 						<TextView
+							android:id="@+id/mTvAllUserRate"
 							style="@style/style_userinfo_table_item_text3"
-							android:layout_toLeftOf="@id/mIv2"
+							android:layout_toLeftOf="@+id/mIv4"
 							android:text="全网top10"/>
 
 						<ImageView
-							android:id="@+id/mIv2"
+							android:id="@+id/mIv4"
 							style="@style/style_userinfo_table_item_imageview"
 							android:src="@drawable/arrow_right"/>
 					</RelativeLayout>

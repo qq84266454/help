@@ -7,13 +7,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.model.GlideUrl;
 import com.weijun.helpcircle.R;
 import com.weijun.helpcircle.base.BaseActivity;
-import com.weijun.helpcircle.utils.glideutils.ShowImageUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MyQRCodeActivity extends BaseActivity {

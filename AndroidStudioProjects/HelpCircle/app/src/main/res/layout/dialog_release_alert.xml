@@ -7,29 +7,33 @@
               android:background="@drawable/dialog_general_bg"
               android:gravity="center_horizontal">
 
+	<!--<TextView-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height="wrap_content"-->
+		<!--android:layout_marginBottom="@dimen/dp_18"-->
+		<!--android:layout_marginTop="@dimen/dp_30"-->
+		<!--android:gravity="center"-->
+		<!--android:text="完成发布需要以下几个条件"-->
+		<!--android:textColor="@color/black"-->
+		<!--android:textSize="@dimen/sp_14"/>-->
+
+	<!--<TextView-->
+		<!--style="@style/style_dialog_release_txt"-->
+		<!--android:text="标题一定要填写"/>-->
+
+	<!--<TextView-->
+		<!--style="@style/style_dialog_release_txt"-->
+		<!--android:text="描述最少5个字"/>-->
+
+	<!--<TextView-->
+		<!--style="@style/style_dialog_release_txt"-->
+		<!--android:text="没有设置图片或视频"/>-->
+
 	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginBottom="@dimen/dp_18"
 		android:layout_marginTop="@dimen/dp_30"
 		android:gravity="center"
-		android:text="完成发布需要以下几个条件"
-		android:textColor="@color/black"
-		android:textSize="@dimen/sp_14"/>
-
-	<TextView
-		style="@style/style_dialog_release_txt"
-		android:text="标题一定要填写"/>
-
-	<TextView
-		style="@style/style_dialog_release_txt"
-		android:text="描述最少5个字"/>
-
-	<TextView
-		style="@style/style_dialog_release_txt"
-		android:text="没有设置图片或视频"/>
-
-	<TextView
+		android:layout_gravity="center"
+		android:id="@+id/mTvHint"
 		style="@style/style_dialog_release_txt"
 		android:text="选择一个分类"/>
 
@@ -39,9 +43,10 @@
 		android:layout_width="match_parent"
 		android:layout_height="1px"/>
 	<TextView
+		android:id="@+id/mTvPositive"
 		android:textColor="@color/black"
 		android:textSize="@dimen/sp_16"
-		android:text="我知道了"
+		android:text="确定"
 		android:gravity="center"
 		android:paddingBottom="@dimen/dp_8"
 		android:paddingTop="@dimen/dp_8"

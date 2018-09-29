@@ -3,11 +3,11 @@ package com.weijun.helpcircle.adapter.help;
 import android.app.Activity;
 import android.support.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.weijun.helpcircle.R;
 import com.weijun.helpcircle.pojo.User;
-import com.weijun.helpcircle.utils.glideutils.ShowImageUtils;
 
 import java.util.List;
 
@@ -25,6 +25,6 @@ public class HelpHelperAdapter extends BaseQuickAdapter<User, BaseViewHolder> {
     @Override
     protected void convert(BaseViewHolder helper, User item) {
         CircleImageView imageView = helper.getView(R.id.mCivHelper);
-        ShowImageUtils.showImageView(activity, R.color.black, item.getImg(), imageView);
+        Glide.with(activity).load(item.getImg()).into(imageView);
     }
 }

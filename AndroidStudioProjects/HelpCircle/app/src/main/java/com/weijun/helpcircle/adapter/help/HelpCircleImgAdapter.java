@@ -10,9 +10,11 @@ import android.widget.TextView;
 
 import com.blankj.utilcode.util.ScreenUtils;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.orhanobut.logger.Logger;
+import com.squareup.picasso.Picasso;
 import com.weijun.helpcircle.R;
 import com.weijun.helpcircle.http.InterfaceParameters;
 import com.weijun.helpcircle.pojo.HelpCircleMsgBean;
@@ -29,14 +31,6 @@ public class HelpCircleImgAdapter extends BaseQuickAdapter<String, BaseViewHolde
         super(layoutResId, data);
     }
 
-    public HelpCircleImgAdapter(@Nullable List<String> data) {
-        super(data);
-    }
-
-    public HelpCircleImgAdapter(int layoutResId) {
-        super(layoutResId);
-    }
-
     public HelpCircleImgAdapter(Activity activity, @Nullable List<String> data) {
         this(R.layout.item_img, data);
         this.activity = activity;
@@ -46,12 +40,15 @@ public class HelpCircleImgAdapter extends BaseQuickAdapter<String, BaseViewHolde
     protected void convert(BaseViewHolder helper, String item) {
         int screenWidth = ScreenUtils.getScreenWidth();
         int width = screenWidth / 4;
-        Logger.e(width+"");
         String pre = InterfaceParameters.BASE_URL + "img/";
-        Glide.with(activity)
+        RequestOptions options = new RequestOptions().centerCrop()
+                .placeholder(R.mipmap.ic_launcher_round)
+                .error(R.mipmap.ic_launcher)
+                .override(width, width);
+        Logger.e(pre + item);
+        Picasso.get()
                 .load(pre + item)
-                .asBitmap()
-                .override(width, width)
+                .resize(width,width)
                 .centerCrop()
                 .into((ImageView) helper.getView(R.id.mIv));
     }
