@@ -53,13 +53,22 @@ public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, Base
         this.recyclerView = recyclerView;
     }
 
+    /**
+     * 防止子recyclerview出现重复，必须使用。
+     * @param position
+     * @return
+     */
     @Override
-    protected void convert(final BaseViewHolder helper, HelpCircleViewBean item) {
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    @Override
+    protected void convert(final BaseViewHolder helper, final HelpCircleViewBean item) {
+
         isOpen = false;
         CircleImageView mIvPosterImg = helper.getView(R.id.mIvPosterImg);
-
         TextView mTvPosterName = helper.getView(R.id.mTvPosterName);
-
         mTvPosterName.setText(item.getPublisherNickname());
         TextView mTvPosterIntro = helper.getView(R.id.mTvPosterIntro);
         TextView mTvHelpReward = helper.getView(R.id.mTvHelpReward);
@@ -83,8 +92,7 @@ public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, Base
             @Override
             public void onItemClick(View view, int position) {
                 // 点击评论时的操作.
-                if (recyclerView != null) {
-//                    ((MainActivity)activity).showDialog();
+                if (recyclerView != null && item.getMsgBeans() != null && item.getMsgBeans().size() > 0) {
                     ((MainActivity) activity).showInputDialog(recyclerView, view, helper.getAdapterPosition(), position);
 
                 } else {
@@ -102,7 +110,7 @@ public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, Base
 //            helpCommentAdapter.addData(msgBeans.subList(0, 2));
 //            mWatchMoreTv.setVisibility(View.VISIBLE);
 //        } else {
-            helpCommentAdapter.addData(msgBeans);
+        helpCommentAdapter.addData(msgBeans);
 //            mWatchMoreTv.setVisibility(View.GONE);
 //        }
         mHelpCommentRv.setAdapter(helpCommentAdapter);
@@ -113,7 +121,7 @@ public class HelpCircleAdapter extends BaseQuickAdapter<HelpCircleViewBean, Base
             public void onClick(View v) {
                 if (isOpen) {
                     // 已经展开 点击 就要收起
-                    mWatchMoreTv.setText(String.format("查看更多%d条评论", msgBeans.size()-2));
+                    mWatchMoreTv.setText(String.format("查看更多%d条评论", msgBeans.size() - 2));
                     helpCommentAdapter.setNewData(msgBeans.subList(0, 2));
                 } else {
                     mWatchMoreTv.setText("收起评论");

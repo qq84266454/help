@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".ui.HelpDetailActivity">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<include layout="@layout/layout_top"/>
+
+		<include layout="@layout/layout_general_title"/>
+
+		<com.scwang.smartrefresh.layout.SmartRefreshLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:srlEnablePureScrollMode="true">
+
+			<android.support.v4.widget.NestedScrollView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/dp_48">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/white"
+						android:orientation="vertical"
+						android:paddingBottom="@dimen/dp_12"
+						android:paddingLeft="@dimen/dp_18"
+						android:paddingRight="@dimen/dp_18"
+						>
+						<TextView
+							android:gravity="center"
+							android:text="时间"
+							android:id="@+id/mTvAllCanTime"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="@dimen/dp_16"
+							android:textColor="@color/colorBA"
+							android:textSize="@dimen/sp_12"/>
+
+						<TextView
+							android:id="@+id/mTvHelpContent"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="@dimen/dp_16"
+							android:hint="互助内容"
+							android:textColor="@color/black"
+							android:textSize="@dimen/sp_16"/>
+
+						<View
+							android:layout_width="match_parent"
+							android:layout_height="1px"
+							android:background="@color/color_release_success_divider"/>
+
+
+					</LinearLayout>
+
+					<android.support.v7.widget.RecyclerView
+						android:id="@+id/mHelpImgRv"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/colorF7"/>
+					<TextView
+						android:layout_marginTop="@dimen/dp_10"
+						android:id="@+id/mTvHasRead"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"/>
+					<TextView
+						android:layout_margin="@dimen/dp_18"
+						android:textColor="@color/white"
+						android:padding="@dimen/dp_10"
+						android:text="分享"
+						android:gravity="center"
+						android:id="@+id/mTvShare"
+						android:background="@drawable/shape_login_enable"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"/>
+					<TextView
+						android:layout_margin="@dimen/dp_18"
+						android:textColor="@color/black"
+						android:padding="@dimen/dp_10"
+						android:text="返回首页"
+						android:gravity="center"
+						android:id="@+id/mTvBack"
+						android:background="@drawable/shape_login_enable_false"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"/>
+				</LinearLayout>
+			</android.support.v4.widget.NestedScrollView>
+		</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+	</LinearLayout>
+
+</FrameLayout>

@@ -36,7 +36,7 @@ public class TestActivity extends BaseActivity {
                 .placeholder(R.mipmap.ic_launcher_round)
                 .error(R.mipmap.ic_launcher)
                 .override(width, width);
-        Glide.with(this).load("http://118.178.193.11/hzq/img/_3_304ef35a961bba59b3d5e316c116fb98.png")
+        Glide.with(this).load(InterfaceParameters.BASE_URL_IMG + "_3_304ef35a961bba59b3d5e316c116fb98.png")
                 .apply(options)
                 .into(mIv);
     }

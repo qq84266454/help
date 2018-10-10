@@ -16,7 +16,7 @@ public class GeneralDialog extends Dialog {
     Context context;
 
     public GeneralDialog(Context context) {
-        super(context, R.style.dialogTheme);
+        super(context, R.style.my_dialog_style);
         this.context = context;
         WindowManager.LayoutParams attributes = getWindow().getAttributes();
         attributes.width = WindowManager.LayoutParams.MATCH_PARENT;
